@@ -1,0 +1,9 @@
+<button mat-button color="primary" class="compose-action" (click)="showModal=true">
+    <mat-icon>add_circle_outline</mat-icon>
+    Compose
+</button>
+
+<app-modal (dismiss)="showModal=false" *ngIf="showModal">
+    <h3 modalTitle>Compose</h3>
+    <app-email-form (emailSubmit)="onSubmit($event)" (onCancel)="showModal=false" [email]="email"></app-email-form>
+</app-modal>

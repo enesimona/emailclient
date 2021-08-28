@@ -1,0 +1,8 @@
+<button mat-raised-button color="accent" (click)="showModal=true">
+    Reply
+</button>
+
+<app-modal (dismiss)="showModal=false" *ngIf="showModal">
+    <h3 modalTitle>Reply</h3>
+    <app-email-form (emailSubmit)="onSubmit($event)"  (onCancel)="showModal=false" [email]="email"></app-email-form>
+</app-modal>
