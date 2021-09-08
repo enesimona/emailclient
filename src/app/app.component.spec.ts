@@ -1,16 +1,20 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { AuthService } from './auth/auth.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientTestingModule
       ],
       declarations: [
         AppComponent
       ],
+      providers: [AuthService]
     }).compileComponents();
   }));
 
@@ -20,16 +24,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'emailclient'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('emailclient');
-  });
 
-  it('should render title', () => {
+  it('should render logo app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('emailclient app is running!');
+    expect(compiled.querySelector('.logo').textContent).toContain('Mailbox');
   });
 });

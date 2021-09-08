@@ -1,4 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AuthService } from '../auth.service';
 
 import { SignoutComponent } from './signout.component';
 
@@ -8,7 +11,9 @@ describe('SignoutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SignoutComponent ]
+      declarations: [ SignoutComponent ],
+      imports: [HttpClientTestingModule, RouterTestingModule],
+      providers: [AuthService]
     })
     .compileComponents();
   }));

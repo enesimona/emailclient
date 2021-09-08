@@ -35,7 +35,7 @@ export class EmailFormComponent implements OnInit {
   }
 
   onCancelAction(){
-    this.emailForm.reset();
+    this.emailForm?.reset();
     this.onCancel.emit(true);
   }
 

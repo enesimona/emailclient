@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { EmailService } from '../email.service';
 
 import { EmailReplayComponent } from './email-replay.component';
 
@@ -8,7 +10,9 @@ describe('EmailReplayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EmailReplayComponent ]
+      declarations: [ EmailReplayComponent ],
+      imports: [HttpClientTestingModule],
+      providers: [EmailService]
     })
     .compileComponents();
   }));

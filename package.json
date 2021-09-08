@@ -8,6 +8,7 @@
     "server": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
     "build": "ng build",
     "test": "ng test",
+    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

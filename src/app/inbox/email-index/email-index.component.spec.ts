@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { EmailService } from '../email.service';
 
 import { EmailIndexComponent } from './email-index.component';
 
@@ -8,7 +10,9 @@ describe('EmailIndexComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EmailIndexComponent ]
+      declarations: [ EmailIndexComponent ], 
+      imports: [HttpClientTestingModule],
+      providers: [EmailService]
     })
     .compileComponents();
   }));

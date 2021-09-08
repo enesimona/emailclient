@@ -3,34 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
-
-interface UsernameAvailableResponse {
-  available: boolean;
-}
-
-interface SignupCredentials{
-  username:string;
-  password:string;
-  passwordConfirmation:string;
-}
-
-interface SigninCredentials{
-  username:string;
-  password:string;
-}
-
-interface SignupResponse{
-  username:string;
-}
-
-interface SignedInResponse{
-  authenticated:boolean;
-  username:string;
-}
-
-interface SignInResponse{
-  username:string;
-}
+import { SignedInResponse } from '../shared/dto/signed-in-response';
+import { SignupCredentials } from '../shared/dto/signup-credentials';
+import { UsernameAvailableResponse } from '../shared/dto/username-available-response';
+import { SignupResponse } from '../shared/dto/signup-response';
+import { SigninCredentials } from '../shared/dto/signin-credentials';
+import { SignInResponse } from '../shared/dto/sign-in-response';
 
 @Injectable({
   providedIn: 'root'
