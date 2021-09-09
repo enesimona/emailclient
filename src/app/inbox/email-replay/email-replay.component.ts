@@ -8,7 +8,7 @@ import { EmailService } from '../email.service';
   styleUrls: ['./email-replay.component.css']
 })
 export class EmailReplayComponent implements OnChanges {
-  showModal:false;
+  showModal:boolean=false;
   @Input() email:Email;
 
   constructor(private emailService:EmailService) { }
@@ -28,5 +28,9 @@ export class EmailReplayComponent implements OnChanges {
       this.showModal=false;
     })
   }
+
+  // setShowModal(value:boolean){
+  //   this.showModal=value;
+  // }
 
 }
