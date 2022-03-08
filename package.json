@@ -1,11 +1,8 @@
 {
-  "homepage": "http://enesimona.github.io/emailclient",
   "name": "angular-material-course",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "ng": "ng",
     "start": "ng serve",
     "server": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
